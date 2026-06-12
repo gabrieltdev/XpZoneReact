@@ -1,0 +1,175 @@
+Um para Um (1:1)
+Cenário: Um Usuário tem um único Endereço.
+
+Onde fica a FK? Na tabela de Endereços.
+
+Lógica: Users.hasOne(Addresses) e Addresses.belongsTo(Users).
+////////////////////////////////
+
+
+Um para Muitos (1:N)
+Cenário: Um Usuário pode cadastrar vários Jogos.
+
+Onde fica a FK? Na tabela de Jogos (ela recebe o user_id).
+
+Lógica: Users.hasMany(Games) e Games.belongsTo(Users).
+////////////////////////////////
+
+
+Muitos para Muitos (N:N)
+Cenário: Muitos usuários favoritam muitos jogos.
+
+Onde fica a FK? Em uma terceira tabela (tabela de junção), como a sua favorites.
+
+Lógica: Users.belongsToMany(Games, { through: 'favorites' }).
+////////////////////////////////////
+
+
+GET - BUSCAR E RETORNAR DADOS
+POST - CRIAR DADOS E BUSCAR DADOS SENSÍVEIS
+PUT - ATUALIZAR TODOS OS DADOS DA TABELA
+PATCH - ATUALIZAR SOMENTE UM DADO DA TABELA
+DELETE - DELETAR UM DADO DA TABELA
+//////////////////////////////////////
+
+
+CODIGOS HTTP 
+
+1xx - Informativo (Recepção)
+100 Continue: O servidor recebeu a primeira parte da solicitação.
+101 Switching Protocols: O servidor aceitou mudar os protocolos. 
+Wikipedia
+Wikipedia
+2xx - Sucesso (Ação Aceita) 
+200 OK: Solicitação bem-sucedida.
+201 Created: Recurso criado com sucesso.
+202 Accepted: Solicitação aceita, mas processamento não concluído.
+204 No Content: Sucesso, mas sem conteúdo na resposta. 
+Hostinger
+Hostinger
+ +4
+3xx - Redirecionamento (Ação Adicional) 
+301 Moved Permanently: URL movida permanentemente.
+302 Found: Redirecionamento temporário.
+304 Not Modified: Conteúdo não modificado (uso de cache). 
+DevMedia
+DevMedia
+ +2
+4xx - Erro do Cliente (Solicitação Inválida) 
+400 Bad Request: Erro de sintaxe na requisição.
+401 Unauthorized: Necessário autenticação.
+403 Forbidden: Acesso proibido/permissão negada.
+404 Not Found: Página não encontrada.
+405 Method Not Allowed: Método não permitido para o recurso.
+429 Too Many Requests: Muitas requisições (limitação de taxa). 
+Hostinger
+Hostinger
+ +4
+5xx - Erro do Servidor (Falha no Servidor) 
+500 Internal Server Error: Erro genérico no servidor.
+502 Bad Gateway: Resposta inválida de um servidor upstream.
+503 Service Unavailable: Serviço indisponível (sobrecarga ou manutenção).
+504 Gateway Timeout: Tempo limite do servidor esgotado. 
+////////////////////////////////////////////////////
+
+
+Atendendo ao seu pedido, vamos recapitular as três propriedades principais do Sequelize (`attributes`, `where` e `include`).
+
+Para ficar bem fácil de visualizar, imagine que a tabela de `Games` no seu banco de dados seja exatamente como esta planilha:
+
+| id | name | console_id | city | user_id |
+| --- | --- | --- | --- | --- |
+| 1 | Call of Duty | 2 | São Paulo | 99 |
+| 2 | God of War | 2 | Rio de Janeiro | 105 |
+| 3 | FIFA 26 | 4 | São Paulo | 99 |
+
+---
+
+### 1. `attributes` (O que você quer Trazer)
+
+Pense no `attributes` como o **seletor de colunas** da sua planilha. Por padrão, o Sequelize traz todas as colunas da tabela (`id`, `name`, `console_id`, `city`, `user_id`). Se você só precisa listar as cidades para o seu `<select>`, você não precisa gastar internet trazendo o resto.
+
+```javascript
+// Diz para o banco: "Olhe para a planilha e me devolva APENAS a coluna city"
+attributes: ['city']
+
+```
+
+**O resultado seria apenas:** `['São Paulo', 'Rio de Janeiro', 'São Paulo']`.
+
+---
+
+### 2. `where` (O Filtro das Linhas)
+
+Pense no `where` como o **filtro de linhas** da planilha (o famoso "funil"). Ele dita quais registros têm o direito de aparecer no resultado final baseado em condições.
+
+```javascript
+where: {
+    city: 'São Paulo',           // 💡 Só traz as linhas onde a cidade for exatamente 'São Paulo'
+    user_id: { [Op.ne]: 99 }     // 💡 Só traz as linhas onde o dono do jogo NÃO SEJA o usuário 99
+}
+
+```
+
+---
+
+### 3. `include` (O Relacionamento / Juntar Planilhas)
+
+Imagine que você tem uma segunda planilha chamada `Consoles` que guarda os nomes reais dos videogames (`1 = Nintendo Switch`, `2 = PlayStation 4`). Na planilha de `Games`, você só salvou o número `console_id`.
+
+O `include` serve para ir até essa segunda planilha, buscar o nome bonito do console e colar o dado junto com o jogo correspondente. É o equivalente ao `VLOOKUP` / `PROCV` do Excel ou ao `JOIN` do SQL.
+
+```javascript
+include: [{
+    model: Consoles,             // 💡 Vai até a tabela de Consoles
+    attributes: ['name_console'] // 💡 Pega apenas o nome do videogame lá dentro
+}]
+
+```
+
+---
+
+### 🚀 Juntando tudo na sua nova rota de Cidades
+
+Como você quer uma rota independente que traga as cidades sem repetição para o seu `useState`, veja como as três propriedades trabalham juntas com o `group` para fazer exatamente o que você quer:
+
+```javascript
+// No seu CitiesController.js
+export async function getAvailableCities(req, res) {
+    try {
+        const cities = await Games.findAll({
+            // 1. attributes: só queremos o texto da cidade
+            attributes: ['city'], 
+            
+            // 2. where: filtramos para não trazer cidades de jogos do próprio usuário logado
+            where: {
+                user_id: { [Op.ne]: ActiveUser } 
+            },
+            
+            // 3. group: remove as duplicadas! Se houver 50 "São Paulo", o grupo junta em uma só
+            group: ['Games.city'], 
+            
+            // (Não precisamos de 'include' aqui, pois a cidade já está gravada direto no jogo)
+        });
+
+        // Retorna a lista limpa: [{ city: "São Paulo" }, { city: "Rio de Janeiro" }]
+        return res.json(cities); 
+        
+    } catch (error) {
+        return res.status(500).json({ error: "Erro ao buscar cidades" });
+    }
+}
+
+```
+
+Guarde essa colinha! Com o `attributes` você escolhe as colunas, com o `where` você filtra as linhas, e com o `include` você traz dados de outras tabelas relacionadas.
+
+////////////////////////////////////
+
+comandos SQL
+
+//ATUALIZAR UM ID ESPECIFICO
+UPDATE users 
+SET xp_global = 2550
+WHERE id = 2;
+

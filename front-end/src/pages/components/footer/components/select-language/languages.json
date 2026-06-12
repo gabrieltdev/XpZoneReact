@@ -1,0 +1,16 @@
+{
+    "language": {
+        "pt-br":{
+            "id": "1",
+            "name": "Português do Brasil",
+            "flag_path": "/ic-brazil-flag.svg",
+            "code": "pt-br"
+        },
+        "en-us":{
+            "id": "2", 
+            "name": "English",
+            "flag_path": "/UsaFlag.png", 
+            "code": "en-us"
+        }
+    }
+}

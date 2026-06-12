@@ -1,0 +1,331 @@
+{
+    "en-us": {
+        "publicLayout": 
+        {
+            "landingPage": 
+            {
+                "header": {
+                    "buttonRegister": "Advertise for free",
+                    "buttonLogin": "Login"
+                },
+                "section1": {
+                    "title": "the best gaming gear \n in your city",
+                    "titleHighLight": "Buy",
+                    "description": "It has never been easier to get that \n dream game or console with XP Zone."
+                },
+                "section2": {
+                    "title": "Discover XP Zone",
+                    "description1": "Here you can find gamers from your city in \n a safe community ",
+                    "descriptionHighLight": "where you can trade, \n buy or sell your gaming gear ",
+                    "description2": ",Additionally \n you'll have the opportunity to connect with \n friends and build your own community.",
+                    "textList1": "Buy new and used games;",
+                    "textList2": "Trade your games for others;",
+                    "textList3": "Sell your gaming items;",
+                    "textList4": "Earn XP with every interaction.",
+                    "button": "Advertise for Free"
+                },
+                "section3": {
+                    "title": "Earn XP and grow \n in the community",
+                    "descriptionHighLight": "With each trade, purchase or sale ",
+                    "description": ",you accumulate \n XP and with that you are ranked in your city \n becoming a more trusted member of the entire \n community and receiving exclusive benefits.",
+                    "titleBox": "You earned ",
+                    "titleBoxHighLight": "100 XP",
+                    "descriptionBox": "Earn XP and win rewards"
+                },
+                "section4": {
+                    "title": "How it works",
+                    "description1": "Search for the \n article you want",
+                    "description2": "Filter by exchange \n or purchase",
+                    "description3": "Choose how to pay or \n the exchange item",
+                    "description4": "Combine the exchange \n or delivery method",
+                    "description5": "Finalize the negotiation \n and earn XP"
+                },
+                "section5": {
+                    "title": "Make friends",
+                    "button": "Join the XP Zone community"
+                },
+                "section6": {
+                    "title": "\n Gift a friend",
+                    "titleHighLight": "Card Zone",
+                    "description1_1": "You can buy ",
+                    "descriptionHighLight": "Card Zones to give as gifts \n to your friends ",
+                    "description1_2": ",with them you can buy your \n favorite games in your city and receive them \n in the comfort of your home.",
+                    "description2": "Take advantage and also buy the best gaming items \n at XP Zone stores.",
+                    "button": "Buy now"
+                },
+                "footer": {
+                    "title": "A place \n for gamers",
+                    "subTitle1": "Enterprise",
+                    "linksEnterprise": [
+                    {"label": "About" ,"path": "#"},
+                    {"label": "Jobs" ,"path": "#"},
+                    {"label": "Mark" ,"path": "#"},
+                    {"label": "Press" ,"path": "#"}
+                    ],
+                    "subTitle2": "Resources",
+                    "linksResources": [
+                    {"label": "Support" ,"path": "#"},
+                    {"label": "Security" ,"path": "#"},
+                    {"label": "Blog" ,"path": "#"},
+                    {"label": "Community" ,"path": "#"}
+                    ],
+                    "subTitle3": "Policy",
+                    "linksPolicy": [
+                    {"label": "Terms" ,"path": "#"},
+                    {"label": "Privacy" ,"path": "#"},
+                    {"label": "Cookies" ,"path": "#"},
+                    {"label": "Moderation" ,"path": "#"}
+                    ],
+                    "subTitle4": "Application",
+                    "linksApplication": [
+                    {"image":"/android_ic.png", "label": "Download for Android" ,"path": "#"},
+                    {"image":"/apple_ic.png", "label": "Download for iOS" ,"path": "#"}
+                    ],
+                    "copyright": "Developed by Lucas de Luca - PRO Figma Web \n Programmed by Gabriel Tavares",
+                    "buttonRegister": "Advertise for free"
+                }
+            },
+            "authLayout":
+            {   
+                "login":
+                {
+                    "title": "Do you already have an account?",
+                    "description": "Log in and access the system",
+                    "signWith": "Sign with",
+                    "separatorText": "Or log in with your email",
+
+                    "label1": "Enter your email",
+                    "placeHolder1":"Enter your email",
+                    
+                    "label2": "Enter your password",
+                    "placeHolder2":"Enter your password",
+
+                    "buttonRegister": "Create account",
+                    "buttonLogin": "Access",
+
+                    "remember": "Remember my password",
+                    "forgot": "I forgot my password",
+
+                    "warnings": {
+                        "emailInvalid": "Invalid email format",
+                        "emailRequired": "Email is required.",
+                        "passwordLength": "The password is too short",
+                        "passwordRequired": "Password is mandatory"
+                    }
+                },
+                "register":
+                {
+                    "title": "Register",
+                    "description": "Using Google or Facebook",
+                    "signWith": "Sign with",
+                    "separatorText": "Or sign up with your email",
+
+                    "label1": "Nickname",
+                    "placeHolder1":"Enter your nickname",
+
+                    "label2": "Enter your email",
+                    "placeHolder2":"Enter your email",
+
+                    "label3": "Enter your password",
+                    "placeHolder3":"Enter your password",
+
+                    "label4": "Repeat your password",
+                    "placeHolder4":"Repeat your password",
+
+                    "buttonRegister": "Create account",
+                    "buttonLogin": "Access",
+
+                    "textTerms1": "By clicking “create account”, I certify that I am 16 years of age or \n older and accept the ",
+                    "terms": "Terms of Use",
+                    "textTerms2": " and ",
+                    "policy": "Privacy Policy"
+                }
+            }
+        },
+        "appLayout":{
+            "home":{
+                "categories":[
+                        {"categorie": "Adventure" ,"path": "#"},
+                        {"categorie": "Action" ,"path": "#"},
+                        {"categorie": "Sport" ,"path": "#"},
+                        {"categorie": "Simulation" ,"path": "#"},
+                        {"categorie": "FPS" ,"path": "#"},
+                        {"categorie": "MMO" ,"path": "#"},
+                        {"categorie": "RPG" ,"path": "#"},
+                        {"categorie": "Strategy" ,"path": "#"},
+                        {"categorie": "Terror" ,"path": "#"},
+                        {"categorie": "Race" ,"path": "#"},
+                        {"categorie": "Fight" ,"path": "#"},
+                        {"categorie": "Open World" ,"path": "#"}
+                    ]
+                
+            }
+        }
+    },
+
+
+    "pt-br": {
+        "publicLayout":
+        {   
+            "landingPage":
+            {
+                "header": {
+                    "buttonRegister": "Anunciar Grátis",
+                    "buttonLogin": "Entrar"
+                },
+                "section1": {
+                    "title": "os melhores artigos \n gamers na sua cidade",
+                    "titleHighLight": "Compre",
+                    "description": "Nunca foi tão fácil conseguir aquele jogo ou \n console tão sonhado com a XP Zone."
+                    
+                },
+                "section2": {
+                    "title": " Conheça a XP Zone",
+                    "description1": "Aqui você encontra jogadores da sua cidades em \n uma comunidade segura ",
+                    "descriptionHighLight": "para você trocar, \n comprar ou vender seus artigos gamers ",
+                    "description2": ",além \n disso, você terá a possibilidade de se conectar com \n amigos e montar a sua própria comunidade.",
+                    "textList1": "Compre jogos novos e usados;",
+                    "textList2": "Troque seus jogos por outros;",
+                    "textList3": "Venda seus artigos gamers;",
+                    "textList4": "Ganhe XP a cada interação.",
+                    "button": "Anunciar Grátis"
+                },
+                "section3": {
+                    "title": "Ganhe XP e cresça \n na comunidade",
+                    "descriptionHighLight": "A cada troca, compra ou venda",
+                    "description": ", você acumula XP e \n com eles você é rankeado na sua cidade tornando-se \n um membro mais confiável para toda a comunidade \n e recebendo benefícios exclusivos.",
+                    "titleBox": "Você ganhou ",
+                    "titleBoxHighLight": "100 XP",
+                    "descriptionBox": "Acumule XP e ganhe recompensas"
+                    
+                },
+                "section4": {
+                    "title": "Como funciona",
+                    "description1": "Pesquise o artigo \n que deseja",
+                    "description2": "Filtre por trocar \n ou comprar",
+                    "description3": "Escolha como pagar \n ou o item de troca",
+                    "description4": "Combine a troca ou \n o tipo de entrega",
+                    "description5": "Finalize a negociação \n e ganhe XP"
+                },
+                "section5": {
+                    "title": "Faça novos amigos",
+                    "button": "Entrar na comunidade XP Zone"
+                },
+                "section6": {
+                    "title": "\n Presenteie um amigo",
+                    "titleHighLight": "Card Zone",
+                    "description1_1": "Você pode comprar ",
+                    "descriptionHighLight": "Card Zones para presentear \n seus amigos ",
+                    "description1_2": ",com eles é possível comprar seus \n jogos favoritos na sua cidade e receber no conforto \n da sua casa.",
+                    "description2": "Aproveite e compre também nas lojas da XP Zone os \n melhores artigos gamers.",
+                    "button": "Comprar agora"
+                },
+                "footer": {
+                    "title": "Um lugar \n para jogadores",
+                    "subTitle1": "Empresa",
+                    "linksEnterprise": [
+                    {"label": "Sobre" ,"path": "#"},
+                    {"label": "Empregos" ,"path": "#"},
+                    {"label": "Marca" ,"path": "#"},
+                    {"label": "Imprensa" ,"path": "#"}
+                    ],
+                    "subTitle2": "Recursos",
+                    "linksResources": [
+                    {"label": "Suporte" ,"path": "#"},
+                    {"label": "Segurança" ,"path": "#"},
+                    {"label": "Blog" ,"path": "#"},
+                    {"label": "Comunidade" ,"path": "#"}
+                    ],
+                    "subTitle3": "Politica",
+                    "linksPolicy": [
+                    {"label": "Termos" ,"path": "#"},
+                    {"label": "Privacidade" ,"path": "#"},
+                    {"label": "Cookies" ,"path": "#"},
+                    {"label": "Moderação" ,"path": "#"}
+                    ],
+                    "subTitle4": "Aplicativo",
+                    "linksApplication": [
+                    {"image":"/android_ic.png", "label": "Baixe para Android" ,"path": "#"},
+                    {"image":"/apple_ic.png", "label": "Baixe para IOS" ,"path": "#"}
+                    ],
+                    "copyright": "Desenvolvido por Lucas de Luca - PRO Figma Web \n Programado por Gabriel Tavares",
+                    "buttonRegister": "Anunciar Grátis"
+                }
+            },
+            "authLayout":
+            {   
+                "login":
+                {
+                    "title": "Já possui uma conta?",
+                    "description": "Faça o seu login e acesse o sistema",
+                    "signWith": "Entrar com o",
+                    "separatorText": "Ou acesse com seu e-mail",
+
+                    "label1": "Digite seu e-mail",
+                    "placeHolder1":"Digite seu e-mail",
+                    
+                    "label2": "Digite sua senha",
+                    "placeHolder2":"Digite sua senha",
+
+                    "buttonRegister": "Cadastrar",
+                    "buttonLogin": "Acessar",
+
+                    "remember": "Lembrar minha senha",
+                    "forgot": "Esqueci minha senha",
+
+                    "warnings": {
+                        "emailInvalid": "Formato de e-mail inválido",
+                        "emailRequired": "O e-mail é obrigatório",
+                        "passwordLength": "A senha é muito curta",
+                        "passwordRequired": "A senha é obrigatória"
+                    }
+                },
+                "register":
+                {
+                    "title": "Cadastre-se",
+                    "description": "Usando o Google ou Facebook",
+                    "signWith": "Entrar com o",
+                    "separatorText": "Ou inscreva-se com seu e-mail",
+
+                    "label1": "Apelido",
+                    "placeHolder1":"Digite seu apelido",
+
+                    "label2": "Digite seu e-mail",
+                    "placeHolder2":"Digite seu e-mail",
+
+                    "label3": "Digite sua senha",
+                    "placeHolder3":"Digite sua senha",
+
+                    "label4": "Repita sua senha",
+                    "placeHolder4":"Repita sua senha",
+
+                    "buttonRegister": "Criar conta",
+                    "buttonLogin": "Acessar",
+
+                    "textTerms1": "Ao clicar em “criar conta”, certifico que tenho 16 anos ou \n mais e aceito os ",
+                    "terms": "Termos de uso",
+                    "textTerms2": " e a ",
+                    "policy": "Política de Privacidade"
+                }
+            }
+        },
+        "appLayout":{
+            "home":{
+                "categories":[
+                    {"categorie": "Aventura" ,"path": "#"},
+                    {"categorie": "Ação" ,"path": "#"},
+                    {"categorie": "Esporte" ,"path": "#"},
+                    {"categorie": "Simulação" ,"path": "#"},
+                    {"categorie": "FPS" ,"path": "#"},
+                    {"categorie": "MMO" ,"path": "#"},
+                    {"categorie": "RPG" ,"path": "#"},
+                    {"categorie": "Estratégia" ,"path": "#"},
+                    {"categorie": "Terror" ,"path": "#"},
+                    {"categorie": "Corrida" ,"path": "#"},
+                    {"categorie": "Luta" ,"path": "#"},
+                    {"categorie": "Mundo Aberto" ,"path": "#"}
+                ]
+            }
+        }
+    }
+}
