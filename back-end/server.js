@@ -36,8 +36,10 @@ server.use("/user-consoles", user_consoles_routes);
 server.use("/categories", categories_routes);
 server.use("/categories-games", categories_games_routes);
 
-server.listen(process.env.PORT, () => {
-  console.log("Servidor Ativo");
+const PORT = process.env.PORT || 8081;
+
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Servidor Ativo na porta ${PORT}`);
 });
 
 //for altering table with sequelize go in /config/db
