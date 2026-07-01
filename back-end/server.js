@@ -15,7 +15,7 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 //routes imports
-const users_routes = require("./routes/usersRoutes");
+const users_routes = require("./routes/UsersRoutes");
 const games_routes = require("./routes/GamesRoutes");
 const consoles_routes = require("./routes/ConsolesRoutes");
 const addresses_routes = require("./routes/AddressesRoutes");
