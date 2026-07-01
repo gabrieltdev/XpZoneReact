@@ -11,7 +11,7 @@ server.use(
     origin: [
       'http://localhost:5173', 
       'https://xp-zone-react-9myuftxol-gabriels-projects-1a7bc531.vercel.app',
-      'https://xp-zone-react.vercel.app' // coloque também o seu domínio principal da vercel
+      'https://xp-zone-react.vercel.app'
     ]
   }),
 );
