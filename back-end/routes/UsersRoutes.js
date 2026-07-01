@@ -57,7 +57,7 @@ router.post("/login", async (req, res) => {
                     image_url: user.image_url,
                     level_global: user.level_global,
                     xp_global: user.level_global,
-                    city:user.address.city
+                    city:user?.address?.city?
                 },
                 token: token,
                 message: "Logado!"
