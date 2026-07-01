@@ -8,7 +8,11 @@ const server = express();
 const cors = require("cors");
 server.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      'http://localhost:5173', 
+      'https://xp-zone-react-9myuftxol-gabriels-projects-1a7bc531.vercel.app',
+      'https://xp-zone-react.vercel.app' // coloque também o seu domínio principal da vercel
+    ]
   }),
 );
 server.use(express.json());
